@@ -16,18 +16,22 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="nothing">
+    <meta name="description" content="使用利用白名单文件 cdb.exe 执行 shellcode cdb.exe：自带微软签名的白名单文件calc.wds：示例wds文件，用于启动calcshellcode2wds.py：处理脚本，将处理后的shellcode转为wds格式 参考文章(使用说明): cdb执行shellcode | Ryze (ryze-t.com) 真实环境中进行测试前先在同版本虚拟机中测试，若想反弹shell，要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(分析)利用白名单文件 cdb.exe 执行 shellcode">
 <meta property="og:url" content="http://example.com/2022/09/14/(%E5%88%86%E6%9E%90)%E5%88%A9%E7%94%A8%E7%99%BD%E5%90%8D%E5%8D%95%E6%96%87%E4%BB%B6%20cdb.exe%20%E6%89%A7%E8%A1%8C%20shellcode/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="nothing">
+<meta property="og:description" content="使用利用白名单文件 cdb.exe 执行 shellcode cdb.exe：自带微软签名的白名单文件calc.wds：示例wds文件，用于启动calcshellcode2wds.py：处理脚本，将处理后的shellcode转为wds格式 参考文章(使用说明): cdb执行shellcode | Ryze (ryze-t.com) 真实环境中进行测试前先在同版本虚拟机中测试，若想反弹shell，要">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202209142119794.png">
+<meta property="og:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202209142115631.png">
+<meta property="og:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202209142115623.png">
 <meta property="article:published_time" content="2022-09-14T15:20:00.000Z">
-<meta property="article:modified_time" content="2022-12-21T09:17:38.000Z">
+<meta property="article:modified_time" content="2023-02-20T10:31:52.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202209142119794.png">
   
   
   
@@ -220,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.1k words
+          888 words
         
       </span>
     
@@ -231,7 +235,7 @@
         
         
         
-          68 mins
+          8 mins
         
       </span>
     
@@ -272,22 +276,34 @@
             <h1 style="display: none">(分析)利用白名单文件 cdb.exe 执行 shellcode</h1>
             
             
-              
-              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="e3f721cdbc336dc4df2507cdc439f41a05a856b542ad4121ad228c3fa9dbee90">7d86b79689ab60361a9356d67b6bbcd5607fed1144eeaf16c8ef05b84114e7f7e8dc26249f7a10472e01793475cb46ee6bd82611b68770277b27997c89c524f2b5ddb7f5741f748dfce978095eee1febd319b9dbd7070d5a71ccccd06acc149cdb5749a622fd6faa71ecbb6c0f82ca9f25f952cf0315915f58444dca2ae92be9d4a1e8194fab4cd4f7126f989fcee117ee303313aa1f9fdebacc2b064095f5ebfb361945c7cbdb12a65941645bbf91044fc2fe802cd21362d042e8de4ff5230eb3b1ea78386ac3329ff0b80b4dddb98c2586dc336ae9686b9405d4145fcffb1f6395ed7fd987430095b6d108e7421373ddc5ee5ddb4394fc2fde59f966c94808bbc533e78b191b191440e36384f1132bbcc5d8827722988eb064825a3db7f7dbcbd4ea6b92dfabe1dbe54b9ddeca7f4f3d98306d5cf85a7249b37de012c22c835d1e74ff377de60c54d74e61cf3ec8a6921004bd1a96d0c3026b550047aeab063a4934889223abf1ce6a7ed7d23b5a00b6d15c6f9d1cb635dfc7ab3dd70741d717ffe95673d760d7c224b633f325d2a82146fc326d9eaa4e2f1ae6f89315f4bd4c9105970721ccca62a3c67f12732ec961051bcb5c1f88f4c0a4d330fde8c3047b8fa8d14819b6082a766ebdd006c5f75dec7fd0640dd3b76f4b571730433b2e7d0800d37337d8124555eef961d127c347c58ea8a6ae8d42215ae5e6d38517e529522abd1a3ea95172e72e23ce23f8da6b84c0c3aff182915514f48e262c9115c8baf0dfb4b4f19f74ea8cd68e9eec73b17fa6de8702b73072af563f545af243e6c7bfea183669661888168beddd56425327f278a55112532d546c9661a9a00c3b695069ca95ed2fb5987a7bf4afe4e25757fd26258f90addb2601ef3bfc2c3f3372449586230ac97d144a03c0cac4d17edde1411e89aa974552edf46407fe18790c1f1a36437d25f012e441247401e2b72bb3a2b60afc577b485aec5e338d98a1609fcd662a42eec4be1b7c7806d4468c3d6e3f115685cf22a549a2409394f98dbe7bc61e3f3ce5eb84357d32734ea5ba9cafa55cc90b155a5d8a0164ee35ab9c345a13abe2bfc1ec421ce34f3c3625117ee0876954946ef1589652b780fe16e5d95cfb1e5d711456041b9393e3dc53f89883d460833cf5dbb802583cbcfcc3e2abb4b23ac8ae88f5e780a2947988741827aa9063aac67c30577faeb58585408aef8ddcb7527e49d5b0a628064bddd0390dd3978cbfada4ef8f719c0e1ddcd90c30c34b90eeefea528f97356e71337f123902ad4eb0ff20d420034d613fce306aa687ceb14c9992d94845b0a266f714caa90e229ec895a5863d966ed8b817c46cab2557ac875315ccef9deaa8dde73cffc86b737dbfc18cd29450d3b552947a01ff0f65928d13a5525970773fe6df83e0ce9bfb2a057be2a81c03995ad228a6fd7a28d7552b72077d7b96e762950151cb9a96503072ec1249c1e67da43224a4363d4c19633740760c12a543e8c577b2abf131a182c59aba8ed69bd7365d4911c25cc950acd982b768c6035ba81dd8ac611b7be358ae4afec2029392167b63e0e88d86681253153faa0835c70dfc3b6d7119b4f080e27c0e1e2a94758b2005960f5d281bc44af3b011831d56c33b68b1df24e22722d00d58ef36c2335dc76f6286294645b106fb0b5c158817629760afb53dc581efa03648713a6a3cf374cb2054698bcab08ec84c6cc5ddf16ef30ff47afa4267ed5adde953f8c07dd41cb9774257a836e4aea2f86ced4581181dd68a919ccc4265825b8eaffa3412c1b6682c3c470524bf7777cd4109136ddae402b512f8cd4cfef0feac6375cd15f9d782e91f732bca8a32fbc0fc8abeeda5c554a46fbade3ab9cdbf707240c14daccf10c0c89b9e29c33d4c043ed7baabf4a2923200f3baeb1a0d3bce759f03da3146885021e36ad4261408f45fb54c553efa73dee63643ef71a374fec26240a8bf3d9d0b6fe8022897f3ba8fb4aa07e87f8352f86480f288e41121a57eb8218eb7e0094d00e745d44fa055a5c419c0e773711b19822da1e7aef4112ed7b5112c79f669e9c7046e7a27604aedfd09b5a29d9eaa092cf504b643cd6fa516d761c2b3c9fc571e60eacc97f9dde54e59ac5d4fedd77e715c1f9bfdf3a3c954f835df6c9ff7956dcf1b07c47a085d24f1d678ec09b47996b893fa76e1d89ce11a81aa667f4fceb99ea0d20b8b61533931bb7b3dae1ffc33ecd10fed7e50e55638d71d38d5a3b172b6510da0bf44255697cc749d2eb28c373504d48947409845e18495c5b781e0a005252eb09b0755bd822f3355bde64819cc232ca77dd1e19048370826cf05b117963f8621383ff0caede987cfcb4041a581386577018d72d7b0abc49adccd2da820f3220d55a8acd40c07240934462ffada8d2495edfa2e33dde0c4420d88c44adde503129478760af592a6bcc5f37a2d900237ab05d117869c49b8e31945f783998d34af13bd28ce52828115a5633489c3a77f90065d03bc07cf90c49a2c0af9eb4db9f7f87e9c02c6b17ff39547b2c705a1fa49042b43e91ba080b16ccab3893f779e3bbea23c73b288a3354eae357a77f66d9693a50987233955fb046008c06cddae1fbc0480dadbc0a096a41725f98e9f261d1858a8a19f6c99744edb1f11142cca501b0628dea04368ddd49412a4110dd2baefd89ad65bcb8bb1fb140b45eef9f3650026921acf32bcb55d54715ba9f21a88da69b18edd774ffd2b4f138ea5081e64ed0239e2bfe556fb0f5629168eeea58c871db5ea71158d3260964da284364684d7fdfcb61de2c5400d2977a7976c66d7bce36b0abc09a8878a3261bdce3fb730537c5778bbe2b61ef4c30c6d0421b207175b8df8ee3e35ed80b3c4eca861174279fafa3c8c4e8128f6d8a1ec3b9e5971e79929ddee78b252b31c3eeb0949eab208b2da893744c46a722da39d337389f4b921302e347850521e9d47b6978ee618813215f73ae137f29ecefdf3be73e2731517bd6df52365f747912c87772aa001b33af1cce7a4d4ac8ef501fb6d42df0291ad96315f733e6591e8dd630150d4344e18baaf2756f25dd697e3375348d67728f8136774ece8f8b23bdd5d53279b367587c8f0ef14d7fdf7a5d8cee7cc8f0c88d33c0f1c11b07fef1eb466b4b3cb6f2582cffc572c6cae41402c76b626016d95314ff935049f9e8a88c2a12e7afcd021fc478fbdcaa1a5e86ce14b6ab9105dccdcd0bb3fbe9ce06a81c009e91c5999485c4236365b5e00aa8ffcba59f3cac671e8a41c9794e81ba95cad900d0b2fe0ce16a935479ba6cea76dfd84467b4af2b290a36cea123b85ab722d2354d37be06312d6d90554bd2bc0aff4cf7dc76a75cffe4f80482e3eafff41c51495fa7c3ba49d04c5453effaa35fc6e0d321702bd822dfcbac396416a24b98d13e81eeca71851936e2cb0b666161142d8d3751e477c110fbfe2122fd10ed67f5284abf93582f87a738e3f08d2754c9a10a237e5584cc3ba445428adab9695cb422d515cafe8203bbf9c4f41fde21da6ec7661039e612c82d9fa874864faaa16140aeb7eebdf78b0243193a9bdb68dcac6b7bcb779e87c1daee753103e538f7d6aaf433c46ff03b42f39f71baddb5831373c380010bdbb5dddf9b071fca3153dfb84e5a79bb41c47f73506e7e225c02b43efb6ed72980ec3cc9e2f91b75080c7e69dc1525573090894ca54f332db76e4fcfb057d791d572a6c3612a5561cb712b83f87201a68fa0f1387f68ff9464e4edf21395469a7f961a560efbbb0135e24265c96f4a49371689daab763944a49a5fad276eed389bced11fad21a680b38ccc616358cc11d7a00658f6c075b4ec2431e55817f94e480a8b3676fbec2a3d73133e913e7808687a02922b24d22db7a10a8535a27a5f1cb26d0b2f3a68c204168be012b0b6f131a08e9dfbbdcb97e7fdc4a51a07575bf6b3889e78490a4497f6fe75cbc724253a9efa4121add03b275b3506a194cd84b71e1f7abde016af3f2d7aa7bb3f70291edebd1ab9deef3cdd3d70e4170006c7f27907e9c9111ec209b340e9696fd31bf65e0ca149e0a459e97bfa38cb567ecbd4e6815092cc970cbe48df3993212e1d768c9b3ba56ccbc434f4edc24cd41773588ef0c3b6c3892d40f70f9b7733b88dbd691569a17b66ffae39e1577ab97464db6b3a15b8cf260376e3fc91515ec22013ab9541f1d970f9c0cdc3137cdf568d15f65b43c2f5c15d4a1dfdea51492883e0a1b372fb4dca99a22db21666fe705e5cd40e77112c11bf831bf12cf043c9a12fde9f148c81a825d62c7600b7ee6da08951dcdba4fef4cf383b98558e74b01b11c931af0b7eda4c02f9aae7efd6448fc7d2fb4efcea3841386b2625e47e3dc2098c93dc938ddf48056bdb5a5f1b23c81e2cd7dfa5d03cabb10e7187150a1cf9ed2f467e32494ac24e88b5a557c63d866b419564b4c7c9d472d274554a2f319ceb7139d3ce5784271e8dd32c1398059d1edbc00a1f616ddf08aac1d09c1555cd50ad9ba1484a58e35b89c51a32f1ae5bf628642469d14ade2db7c48c289c9a5a142b0aa245d79e13034d9fcf5c939349fc8901a5d019dce3723972f889411e6be8bfe52fd72e1f185b61aa9ae73c4d0423b1c390c3c69545f2a7c25702626be425e270629c8c0709f82b37e8896b5289f4aad61ee3e61aba4b8570f7914ea985ba4ea03de5131892c5cf572cf685324b97b42f92b7b9ef01ffc9b8302a66afc71d70236e9975762ecfbcd01211efc5393010ea3a5cbb374933db3a65b1c3e60368af14db2f39ab529f7648fc83750a31cd03c1a0664aa2a6d705747a890b08dcad5f0a44e35e13d92916241b48310301df87946217d005c8d63e916febad03b53e90e2b68f53dd3ea30331a9ebb2a073ffe78d548d082b28b93ceaa1e2703718f56f3a6bda0bc18e0e821b86689995e9d60c154373a5d1929df52c24a90dfc1039c4023ec646b59c3bb806b74a91d202cd3db7b2c119d628a3a42627b9fd3e17f69e859929ef26b6e749846fad0c24426a38e03951092b15f1bb5ab6feb4d8a5465aaf0771e0ff59acaef70e11bd26d6f3f99980030e60dbaa6260659d948f9c74380c0ece02daa08144fb4d3adf6f2325cf1ad0a8e315308376cc4b41fb81e008b4d3200bd3cd001d1de94d11530c10d08967825ebc4d7998b2c57b2cad27979802307ac432db5a0f3e31071a8abf4ce8409317453881474874425c043ea624b45b7c3fbb9236b88d3ce50e6186ed2404226038a781bba3573c26eda551a7b57c404169ec4343a2d381e55da69c2bf1b8577b2913bb2f96e76564f171b28a30cc8fa987991288ae29da86d6abb0386aad84ca08e5ebae6c178437776fe2afc33aa7fd4067df8169b5b73d491ca6ad83ccb0b95a6192985c15b8ace746be9415a97b4950dabf6bc3d8f55784b5f7129c03e8fb9c1f51ff33bb92aa339c0f1a22d7220723f758593a72f9842486447d4c0a02c81158f2b59470e4452c987ca9b8d867e082de186b948e957019554182f1c04f8edd88a26e06cb57148d73c7913a48f2e075f8c58f82de9f24ecf9317ddcf76cbfd2f29d5595986ba9dfd79209035532599deb7e0258cbf704e0f546cba886226cdae89b455e9ecc5acf97f2ac6d8b7c5410fb1be32c4fd6a341d56fa9e4d74565c0abe4e0b631d16b094c164b7cdc69c77d51bedbba60c3e2dc632e24bea3e2816d074047d985dd8</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
-              
+              <div class="markdown-body">
+                
+                <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>利用白名单文件 cdb.exe 执行 shellcode</p>
+<p>cdb.exe：自带微软签名的白名单文件<br><br>calc.wds：示例wds文件，用于启动calc<br><br>shellcode2wds.py：处理脚本，将处理后的shellcode转为wds格式<br></p>
+<p>参考文章(使用说明): <a target="_blank" rel="noopener" href="https://ryze-t.com/2022/03/23/cdb%E6%89%A7%E8%A1%8Cshellcode/">cdb执行shellcode | Ryze (ryze-t.com)</a></p>
+<p>真实环境中进行测试前先在同版本虚拟机中测试，若想反弹shell，要用 reverse tcp 的shellcode</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>就是将raw.bin转换为wds格式 然后用白名单文件cdb.exe读取 从而达到免杀</p>
+<h2 id="而且有个优点是-反弹shell的话可以隐藏进程"><a href="#而且有个优点是-反弹shell的话可以隐藏进程" class="headerlink" title="而且有个优点是 反弹shell的话可以隐藏进程"></a>而且有个优点是 反弹shell的话可以隐藏进程</h2><p> 看如下</p>
+<p>去掉 \x 、” 等字符之后，保留原始 shellcode 字符</p>
+<p>&#x3D;&#x3D;像这样&#x3D;&#x3D;</p>
+<p><img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202209142119794.png" srcset="/img/loading.gif" lazyload alt="image-20220914211950752"></p>
+<p>&#x3D;&#x3D;通过python shellcode2wds.py进行处理：&#x3D;&#x3D;</p>
+<p>生成shell.wds文件后，将 cdb 和 wds 文件复制到被害机器中，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash">cdb.exe -pd -cf shell.wds -o notepad.exe<br></code></pre></td></tr></table></figure>
 
-              
+<p>可以看到正常上线：</p>
+<p><a target="_blank" rel="noopener" href="https://ryze-1258886299.cos.ap-beijing.myqcloud.com/20220329100837.png"><img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202209142115631.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<p>查看受害机器进程：</p>
+<p><a target="_blank" rel="noopener" href="https://ryze-1258886299.cos.ap-beijing.myqcloud.com/20220329100839.png"><img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202209142115623.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<p>可以看到是在 notepad 进程中存在 tcp 连接，隐蔽性相对较高，且由于shellcode没明显特征，cdb 有签名，因此免杀效果很好。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>需要分析的话就是分析shellcode2wds.py了</p>
+<p>直接看代码的话就都是结果了</p>
+<p>尝试分析cdb.exe和wds代码构造</p>
+<h3 id="wds是网络格式"><a href="#wds是网络格式" class="headerlink" title="wds是网络格式"></a>wds是网络格式</h3><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%97%A0%E7%BA%BF%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/639419?fromModule=lemma_inlink">无线分布式系统</a>(WDS)的无线混合模式，可以支持在点对点、点对多点、中继应用模式下的无线访问点(AP)，同时工作在两种工作模式状态。即：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F?fromModule=lemma_inlink">桥接模式</a>+AP模式。无线局域网络创新的无线分布式系统(WDS)，改变了原有单一、简单的无线应用模式。比如：大型热点区域和企业用户选用无线WDS技术的解决方案的时候，可以通过各种可选的无线应用方式来连接各个AP，这样就大大提高了整个网络结构的灵活型和便捷性。特别值得一提的是：使无线网络使用者以购买最少无线设备，达到更多用途的功能实现</p>
+<h3 id="其他的难找且没精力找，那知道有这个脚本存在就行了"><a href="#其他的难找且没精力找，那知道有这个脚本存在就行了" class="headerlink" title="其他的难找且没精力找，那知道有这个脚本存在就行了"></a>其他的难找且没精力找，那知道有这个脚本存在就行了</h3><p>因为太冷门了  当然这个技巧还是很有用的</p>
+
+                
+              </div>
             
             <hr/>
             <div>
@@ -542,23 +558,6 @@
   
 
 
-
-
-  
-  <script defer>
-    if (document.getElementById('hbePass')) {
-      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
-        var hbePrefix = document.querySelector('hbe-prefix');
-        hbePrefix.parentElement.classList.add('markdown-body');
-        Fluid.utils.retry(function() {
-          if (Fluid.boot && Fluid.boot.refresh) {
-            Fluid.boot.refresh();
-            return true;
-          }
-        }, 100, 10);
-      })
-    }
-  </script>
 
 
   
