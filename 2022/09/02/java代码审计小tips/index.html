@@ -13,14 +13,14 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="CDxiaodong">
   <meta name="keywords" content="">
   
     <meta name="description" content="审计1234561、找最新版的版本较低的，例如1.1、1.22、找github star不多的3、找源码总容量小的1、如果cms版本高，说明开发有经常维护，同时也说明里面的简单漏洞已经被发现并且被提交并整改了。（具体这个可以看看CMS官网放出的更新日志）2、为什么找github star不多的cms？很简单，使用的人不多，没人标星，功能也比较少。3、源码少容易看啊，而且想着源代码就那么点，看着也不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java代码审计小tips">
 <meta property="og:url" content="http://example.com/2022/09/02/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%B0%8Ftips/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="CD_blog">
 <meta property="og:description" content="审计1234561、找最新版的版本较低的，例如1.1、1.22、找github star不多的3、找源码总容量小的1、如果cms版本高，说明开发有经常维护，同时也说明里面的简单漏洞已经被发现并且被提交并整改了。（具体这个可以看看CMS官网放出的更新日志）2、为什么找github star不多的cms？很简单，使用的人不多，没人标星，功能也比较少。3、源码少容易看啊，而且想着源代码就那么点，看着也不">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202206011153860.png">
@@ -33,14 +33,14 @@
 <meta property="og:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202206071521926.png">
 <meta property="article:published_time" content="2022-09-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-02-20T10:31:34.000Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="CDxiaodong">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202206011153860.png">
   
   
   
-  <title>java代码审计小tips - Hexo</title>
+  <title>java代码审计小tips - CD_blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -104,7 +104,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>CD_blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -416,7 +416,7 @@
       
         <div class="license-meta-item">
           <div>Author</div>
-          <div>John Doe</div>
+          <div>CDxiaodong</div>
         </div>
       
       
@@ -568,7 +568,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://github.com/cdxiaodong" target="_blank" rel="nofollow noopener"><span>CD</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/cdxiaodong" target="_blank" rel="nofollow noopener"><span>XD</span></a> 
     </div>
   
   

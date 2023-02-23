@@ -13,14 +13,14 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="CDxiaodong">
   <meta name="keywords" content="">
   
     <meta name="description" content="20220419 现在及未来比较典型的渗透测试流程是：确定站点指纹→通过旁站扫描备份或开源程序得到源代码→代码审计→利用审计出来的漏洞。因此对于渗透测试人员而言，代码审计能力也显得越发重要。 审计思路1. 2. 这种存在xss漏洞 3. 就比如shiro存在版本漏洞 然后这个项目还有其他包存在危险函数且可以给引用  这样配合就产生一条利用链 4. JDK8版本为8u251 1版本号“8u251”里">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java代码审计入门">
 <meta property="og:url" content="http://example.com/2022/05/29/java%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%A5%E9%97%A8/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="CD_blog">
 <meta property="og:description" content="20220419 现在及未来比较典型的渗透测试流程是：确定站点指纹→通过旁站扫描备份或开源程序得到源代码→代码审计→利用审计出来的漏洞。因此对于渗透测试人员而言，代码审计能力也显得越发重要。 审计思路1. 2. 这种存在xss漏洞 3. 就比如shiro存在版本漏洞 然后这个项目还有其他包存在危险函数且可以给引用  这样配合就产生一条利用链 4. JDK8版本为8u251 1版本号“8u251”里">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204202337412.png">
@@ -793,14 +793,14 @@
 <meta property="og:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202205052117211.png">
 <meta property="article:published_time" content="2022-05-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-02-20T10:31:44.000Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="CDxiaodong">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204202337412.png">
   
   
   
-  <title>java代码审计入门 - Hexo</title>
+  <title>java代码审计入门 - CD_blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -838,7 +838,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -864,7 +864,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>CD_blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -1771,7 +1771,7 @@
 <p>图5-34　调用PMAdmin的show方法</p>
 <p>对PMAdmin的show方法进行审计，可以发现如下代码在输出数据前并没有进行权限验证，即任何人都可以发送请求，如图5-35所示<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204220050882.png" srcset="/img/loading.gif" lazyload alt="image-20220422005012775"></p>
 <p>图5-35　对PMAdmin的show方法进行审计</p>
-<p>通过浏览器访问地址：<a target="_blank" rel="noopener" href="http://192.168.8.43:8080/mailmain?type=pm%EF%BC%88%E5%85%B6%E4%B8%ADhttp://">http://192.168.8.43:8080/mailmain?type=pm（其中http://</a> 192.168.8.43:8080&#x2F;是邮件系统登录页），可以发现“<a href="mailto:&#106;&#97;&#107;&#x65;&#64;&#109;&#121;&#x74;&#x65;&#115;&#116;&#x2e;&#99;&#x6e;">&#106;&#97;&#107;&#x65;&#64;&#109;&#121;&#x74;&#x65;&#115;&#116;&#x2e;&#99;&#x6e;</a>”和“sophia@ mytest.cn”这两个已经登录过的用户的邮箱地址被显示出来。由于无须身份认证即可访问该接口，因此已经造成敏感信息泄露，如图5-36所示。<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204220052490.png" srcset="/img/loading.gif" lazyload alt="image-20220422005203388"></p>
+<p>通过浏览器访问地址：<a target="_blank" rel="noopener" href="http://192.168.8.43:8080/mailmain?type=pm%EF%BC%88%E5%85%B6%E4%B8%ADhttp://">http://192.168.8.43:8080/mailmain?type=pm（其中http://</a> 192.168.8.43:8080&#x2F;是邮件系统登录页），可以发现“<a href="mailto:&#106;&#x61;&#107;&#101;&#x40;&#109;&#121;&#x74;&#x65;&#115;&#116;&#x2e;&#x63;&#110;">&#106;&#x61;&#107;&#101;&#x40;&#109;&#121;&#x74;&#x65;&#115;&#116;&#x2e;&#x63;&#110;</a>”和“sophia@ mytest.cn”这两个已经登录过的用户的邮箱地址被显示出来。由于无须身份认证即可访问该接口，因此已经造成敏感信息泄露，如图5-36所示。<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204220052490.png" srcset="/img/loading.gif" lazyload alt="image-20220422005203388"></p>
 <p>图5-36　敏感信息泄露</p>
 <h3 id="5-3-3-开发组件敏感信息泄露"><a href="#5-3-3-开发组件敏感信息泄露" class="headerlink" title="5.3.3　开发组件敏感信息泄露"></a>5.3.3　开发组件敏感信息泄露</h3><p>若研发人员未做好“自定义错误页面”的工作，就容易将网站的敏感信息暴露到前端。攻击者很可能利用这些敏感信息进行新的攻击尝试。</p>
 <p>这里以一个未设置“自定义错误页”的Spring Boot的小工程为例，在注入恶意paylaod后，小工程将数据库MySQL、持久化框架MyBatis以及对应的数据库查询语句暴露在前端，如图5-37所示。<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204220055947.png" srcset="/img/loading.gif" lazyload alt="image-20220422005531845"></p>
@@ -1964,9 +1964,9 @@
 <p>图5-49　在对代码进行加固后，XXE攻击失效</p>
 <h2 id="5-5-失效的访问控制"><a href="#5-5-失效的访问控制" class="headerlink" title="5.5　失效的访问控制"></a>5.5　失效的访问控制</h2><h3 id="5-5-1-失效的访问控制漏洞简介"><a href="#5-5-1-失效的访问控制漏洞简介" class="headerlink" title="5.5.1　失效的访问控制漏洞简介"></a>5.5.1　失效的访问控制漏洞简介</h3><p>失效的访问控制是指未对通过身份验证的用户实施恰当的访问控制。攻击者可以利用这些缺陷访问未经授权的功能或数据，例如访问其他用户的账户、查看敏感文件、修改其他用户的数据、更改访问权限等。业界常将典型的越权漏洞划分为横向越权与纵向越权这两类。</p>
 <p>下面通过一个在某在线教育网站的“普通用户篡改其他普通用户的密码”的案例说明“横向越权”的代码审计问题，并通过“黑盒+白盒”的方式进行探究。“黑盒测试”（漏洞复现）的过程如下。</p>
-<p>在实验前，受害者（<a href="mailto:&#108;&#x6d;&#120;&#x31;&#x39;&#51;&#64;&#49;&#x36;&#x33;&#x2e;&#99;&#x6f;&#109;">&#108;&#x6d;&#120;&#x31;&#x39;&#51;&#64;&#49;&#x36;&#x33;&#x2e;&#99;&#x6f;&#109;</a>&#x2F;111111）的姓名和昵称均为“受害者”（通过查看数据库，可知用户ID为“1”），如图5-50所示。<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204221425268.png" srcset="/img/loading.gif" lazyload alt="image-20220422142528134"></p>
+<p>在实验前，受害者（<a href="mailto:&#x6c;&#x6d;&#x78;&#x31;&#57;&#x33;&#x40;&#49;&#x36;&#51;&#46;&#x63;&#111;&#109;">&#x6c;&#x6d;&#x78;&#x31;&#57;&#x33;&#x40;&#49;&#x36;&#51;&#46;&#x63;&#111;&#109;</a>&#x2F;111111）的姓名和昵称均为“受害者”（通过查看数据库，可知用户ID为“1”），如图5-50所示。<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204221425268.png" srcset="/img/loading.gif" lazyload alt="image-20220422142528134"></p>
 <p>图5-50　横向越权的受害者</p>
-<p>而攻击者（<a href="mailto:&#x6c;&#x6d;&#105;&#110;&#x67;&#120;&#105;&#x6e;&#103;&#64;&#x69;&#110;&#x78;&#101;&#x64;&#117;&#46;&#99;&#x6f;&#x6d;">&#x6c;&#x6d;&#105;&#110;&#x67;&#120;&#105;&#x6e;&#103;&#64;&#x69;&#110;&#x78;&#101;&#x64;&#117;&#46;&#99;&#x6f;&#x6d;</a>&#x2F;111111）的姓名和昵称均为“攻击者”，如图5-51所示。<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204221425427.png" srcset="/img/loading.gif" lazyload alt="image-20220422142550184"></p>
+<p>而攻击者（<a href="mailto:&#108;&#109;&#x69;&#110;&#x67;&#120;&#x69;&#x6e;&#x67;&#x40;&#105;&#x6e;&#x78;&#x65;&#100;&#117;&#x2e;&#x63;&#111;&#x6d;">&#108;&#109;&#x69;&#110;&#x67;&#120;&#x69;&#x6e;&#x67;&#x40;&#105;&#x6e;&#x78;&#x65;&#100;&#117;&#x2e;&#x63;&#111;&#x6d;</a>&#x2F;111111）的姓名和昵称均为“攻击者”，如图5-51所示。<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204221425427.png" srcset="/img/loading.gif" lazyload alt="image-20220422142550184"></p>
 <p>图5-51　横向越权的攻击者</p>
 <p>接下来，我们模拟以攻击者的视角开始横向越权攻击。使用BurpSuite抓取“提交用户基本资料”的数据包如下。<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204221427502.png" srcset="/img/loading.gif" lazyload alt="image-20220422142702374"><img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204221433141.png" srcset="/img/loading.gif" lazyload alt="image-20220422143324012"></p>
 <p>我们可以在该请求报文中发现参数“user.userId”是“3”，一个用户可控的参数。接着，我们可以将参数“user.userId”的值替换为“1”，将参数“user.userName”与“user.showName”的值替换为“hacked byattacker”，如图5-52所<img src="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202204221434382.png" srcset="/img/loading.gif" lazyload alt="image-20220422143403985"></p>
@@ -3352,7 +3352,7 @@
       
         <div class="license-meta-item">
           <div>Author</div>
-          <div>John Doe</div>
+          <div>CDxiaodong</div>
         </div>
       
       
@@ -3504,7 +3504,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://github.com/cdxiaodong" target="_blank" rel="nofollow noopener"><span>CD</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/cdxiaodong" target="_blank" rel="nofollow noopener"><span>XD</span></a> 
     </div>
   
   

@@ -13,14 +13,14 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="CDxiaodong">
   <meta name="keywords" content="">
   
     <meta name="description" content="php12345678910111213先讲讲什么是大码 小马 小马拉大码 一句话木马C:\Users\e&amp;#x27;e&amp;#x27;t\Desktop\红队安全开发\免杀马的制作\php\备课先讲讲几个重要的php函数的作用C:\Users\e&amp;#x27;e&amp;#x27;t\Desktop\红队安全开发\免杀马的制作\php\备课然后讲讲几个shell脚本被杀的病因然后讲讲22个免杀方法然后讲讲手动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="phpwebshell从基础到深入变种">
 <meta property="og:url" content="http://example.com/2022/08/18/phpwebshell%E4%BB%8E%E5%9F%BA%E7%A1%80%E5%88%B0%E6%B7%B1%E5%85%A5%E5%8F%98%E7%A7%8D/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="CD_blog">
 <meta property="og:description" content="php12345678910111213先讲讲什么是大码 小马 小马拉大码 一句话木马C:\Users\e&amp;#x27;e&amp;#x27;t\Desktop\红队安全开发\免杀马的制作\php\备课先讲讲几个重要的php函数的作用C:\Users\e&amp;#x27;e&amp;#x27;t\Desktop\红队安全开发\免杀马的制作\php\备课然后讲讲几个shell脚本被杀的病因然后讲讲22个免杀方法然后讲讲手动">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202205141747763.png">
@@ -94,14 +94,14 @@
 <meta property="og:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202208111059750.png">
 <meta property="article:published_time" content="2022-08-17T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-02-20T10:31:00.000Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="CDxiaodong">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cd-1307445315.cos.ap-nanjing.myqcloud.com/CD%5C202205141747763.png">
   
   
   
-  <title>phpwebshell从基础到深入变种 - Hexo</title>
+  <title>phpwebshell从基础到深入变种 - CD_blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -139,7 +139,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -165,7 +165,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>CD_blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -714,7 +714,7 @@
       
         <div class="license-meta-item">
           <div>Author</div>
-          <div>John Doe</div>
+          <div>CDxiaodong</div>
         </div>
       
       
@@ -866,7 +866,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://github.com/cdxiaodong" target="_blank" rel="nofollow noopener"><span>CD</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/cdxiaodong" target="_blank" rel="nofollow noopener"><span>XD</span></a> 
     </div>
   
   
